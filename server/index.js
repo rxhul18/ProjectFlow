@@ -1,15 +1,16 @@
 const express = require("express");
+const colors = require('colors');
+
 require("dotenv").config();
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema");
+const connectDB = require('./config/db.js')
 const port = process.env.PORT;
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-} );
-
+// Connect to DB
+connectDB();
 app.use(
   '/graphql', 
   graphqlHTTP({
@@ -17,6 +18,10 @@ app.use(
   graphiql: process.env.NODE_ENV === 'development'
 }))
 
+app.get("/", (req, res) => {
+  res.send("Hello World ");
+});
+
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`)
 });
