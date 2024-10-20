@@ -72,7 +72,7 @@ const RootQuery = new GraphQLObjectType({
         // return clients.find(client => client.id === args.id) -- this is for local data from sampleData.js
         return Client.findById(args.id);
       },
-    },
+    },  
   },
 });
 
