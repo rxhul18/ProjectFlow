@@ -1,0 +1,14 @@
+{
+  "name": "clientprojectflow",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev"
+
+  },
+  "keywords": [],
+  "author": "Rahul Shah",
+  "license": "ISC",
+  "description": ""
+}

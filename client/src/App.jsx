@@ -11,6 +11,7 @@ import Projects from './components/Projects'
 import Project from './pages/Project'
 import NotFound from './pages/NotFound'
 import Home from './pages/Home';
+import Footer from './components/Footer';
 
 
 const cache = new InMemoryCache({
@@ -48,45 +49,19 @@ function App() {
   const closeProjectModal = () => setIsProjectModalOpen(false);
 
   return (
-    <>
-      {/* <ApolloProvider client={client}>
-        <Header />
-        <div className='flex w-full justify-center'>
-          <div className='container'>
-            <div className='flex gap-4 mb-4'>
-              <button
-                onClick={openClientModal}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >
-                <p className='flex items-center gap-4'>Add Client <span><FaUser /></span></p>
-              </button>
-              <button
-                onClick={openProjectModal}
-                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-              >
-                <p className='flex items-center gap-4'>Add Project <span><FaProjectDiagram /></span></p>
-              </button>
-            </div>
-            <Projects />
-            <Clients />
-          </div>
-        </div>
-        <AddClientModal isOpen={isClientModalOpen} onClose={closeClientModal} />
-        <AddProjectModal isOpen={isProjectModalOpen} onClose={closeProjectModal} />
-      </ApolloProvider> */}
+    <div className='relative h-[100vh]'>
       <ApolloProvider client={client}>
         <Router>
           <Header />
-          {/* <div className='container'> */}
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/projects/:id' element={<Project />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
-          {/* </div> */}
+          <Footer />
         </Router>
       </ApolloProvider>
-    </>
+    </div>
   )
 }
 

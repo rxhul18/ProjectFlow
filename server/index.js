@@ -23,7 +23,11 @@ app.use(
 }))
 
 app.get("/", (req, res) => {
-  res.send("Hello World ");
+  res.json({
+    "Project":"Client-Project flow management system intergrated with Graphql & MONGO.db",
+    "isServerAlive":true,
+    "Creator":"Rahul Shah"
+  });
 });
 
 app.listen(port, () => {
