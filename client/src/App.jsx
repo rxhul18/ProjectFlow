@@ -34,7 +34,7 @@ const cache = new InMemoryCache({
 })
 
 const client = new ApolloClient({
-  uri:"http://localhost:3050/graphql",
+  uri:"https://projectflow-t7s2.onrender.com",
   cache,
 })
 
