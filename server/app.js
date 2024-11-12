@@ -14,7 +14,6 @@ const app = express();
 connectDB();
 
 // app.use(cors())
-const cors = require('cors');
 app.use(cors({
   origin: 'https://project-client-flow.vercel.app',  // specify the frontend domain
 }));
