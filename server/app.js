@@ -13,7 +13,11 @@ const app = express();
 // Connect to DB
 connectDB();
 
-app.use(cors())
+// app.use(cors())
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://project-client-flow.vercel.app',  // specify the frontend domain
+}));
 
 app.use(
   '/graphql', 
